@@ -48,7 +48,25 @@ Lasty I dropped the column `education_num` so as to not confuse the estimator wi
 
 ## Data and tf preparations  
 
+In this part, I used one of tensorflows tutorial to turn pandas dataframes into batches to input into a tensorflow model.  
 
+Then I used `train_test_split` from `sklearn.preprocessing` to split the train dataset into a train and validation.  
+
+![SC train_test and data prep](content/MD_6.png)  
+
+I then made the feature columns needed by `tf.keras.Sequential` to use.  
+
+![Feature columns](content/MD_7.png)
+
+Creating the keras model  
+
+![Keras model](content/MD_8.png)
+
+## Training and evaluating the models
+
+Here I train the model, then use the given test set to test the accuracy of the model.  
+
+![train and eval](content/MD_9.png)
 
 ## Apendix
 
