@@ -4,6 +4,12 @@ This is my submission for Google Code-in 2019 task.
 
 Note: In this markdown, as much as I can, I will screenshot the cell I am talking about and place it here, however I have more comments in the cell itself. Thus I may omit some stuff already in the comments.
 
+[Link](https://colab.research.google.com/drive/1AydiQCLSY4ZhZ6mKTzyylmo1GtTHZrgy) to the google colab notebook.
+
+# Question I gave myself to solve  
+
+Based on the data, classify if a person earned <=50K or >50K per year.
+
 
 Thought process behind what I did:  
 
@@ -67,6 +73,12 @@ Creating the keras model
 Here I train the model, then use the given test set to test the accuracy of the model.  
 
 ![train and eval](content/MD_9.png)
+
+## Final thoughts  
+
+Overall I think there is a lot I could improve on this project. One being engineering more features. Also I could have done more EDA to find out if some of the data were skewed and try to account for that.  
+
+Although I do not know where to begin with issues such as those. Overall, this was quite a fun project to see if I could use tensorflow to create a model to classify the income bracket of a person.
 
 ## Apendix
 
