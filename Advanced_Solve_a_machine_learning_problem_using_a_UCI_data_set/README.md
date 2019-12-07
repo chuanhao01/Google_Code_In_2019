@@ -18,7 +18,7 @@ Below you can see my looking at some basic stats of the data:
 
 Looking at some of the raw data:  
 
-![Looking at raw data](content/MD_2.png)
+![Looking at raw data](content/MD_2.png)  
 
 From this, we can see how some fields are a bit peticular. I'll break them down by columns below.  
 
@@ -30,7 +30,25 @@ From this, we can see how some fields are a bit peticular. I'll break them down 
   - Going to standardise all of them
 - `capital_gain` and `capital_loss`
   - Seem to be very spread out and a lot of the samples have this as 0
-  - could create a new `net_capital_change` column
+  - Have to standardise the values
+
+## Data engineering/cleaning
+
+Here I mapped the label of `'<=50K'` and `'>50K'` to `0` and `1`.  
+
+![Mapping the values](content/MD_3.png)  
+
+Then I scaled the columns `['fnlweight', 'capital_gain', 'capital_loss']` by minmax in scikit-learn.  
+
+![Scaling the values](content/MD_4.png)  
+
+Lasty I dropped the column `education_num` so as to not confuse the estimator with a continous value.  
+
+![Dropping cols](content/MD_5.png)  
+
+## Data and tf preparations  
+
+
 
 ## Apendix
 
@@ -51,5 +69,5 @@ capital-loss - continous
 hours-per-week - number of hours worked per week
 native-country - categorical
 
-Final label - <50, >=50
+Final label - <=50K, >50K
 
