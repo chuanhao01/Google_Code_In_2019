@@ -84,20 +84,20 @@ Although I do not know where to begin with issues such as those. Overall, this w
 
 ### Data dictonary
 
-age - continous
-workclass - categorical
-fnlweight - number of ppl the person believes are below 50K(?), continous
-education - category of final education
-education-num - number of years in education, continous
-martial-status - category
-occupation - pre-defined category
-relationship - relative to the person themselves
-race - categorical
-sex - categorical
-capital-gain - continous
-capital-loss - continous
-hours-per-week - number of hours worked per week
-native-country - categorical
+age - continous  
+workclass - categorical  
+fnlweight - number of ppl the person believes are below 50K(?), continous  
+education - category of final education  
+education-num - number of years in education, continous  
+martial-status - category  
+occupation - pre-defined category  
+relationship - relative to the person themselves  
+race - categorical  
+sex - categorical  
+capital-gain - continous  
+capital-loss - continous  
+hours-per-week - number of hours worked per week  
+native-country - categorical  
 
-Final label - <=50K, >50K
+Final label - <=50K, >50K  
 
