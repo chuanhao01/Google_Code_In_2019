@@ -4,14 +4,12 @@ This is my submission for Google Code-in 2019 task.
 
 Note: In this markdown, as much as I can, I will screenshot the cell I am talking about and place it here, however I have more comments in the cell itself. Thus I may omit some stuff already in the comments.
 
-[Link](https://colab.research.google.com/drive/1AydiQCLSY4ZhZ6mKTzyylmo1GtTHZrgy) to the google colab notebook.
+[Link](https://colab.research.google.com/drive/1l2W_0HbW94xNZCWt7iuc58lT7F-ixiJZ) to the google colab notebook.
 
 # Question I gave myself to solve  
 
 Based on the data, classify if a person earned <=50K or >50K per year.
 
-
-Thought process behind what I did:  
 
 ## First look at the data  
 First thing I did after setting up the links to dl the files using urllib was to look at the data in pandas.
@@ -29,11 +27,12 @@ Looking at some of the raw data:
 From this, we can see how some fields are a bit peticular. I'll break them down by columns below.  
 
 - `education-num`
-  - This field seems to be continous, however look at the field closer, we see that it is actually a categorical feature. This is as there are only specific values here which corrospond to the highest level of education a person got.
+  - This field seems to be continous, however looking at the field closer, we see that it is actually a categorical feature. This is as there are only specific values here which corrospond to the highest level of education a person got.
   - Dropping this column in favour of the categorical `education` column
 - `fnlweight` 
   - The data points seem to be spread very far apart in terms of values.
   - Going to standardise all of them
+  - Based on past experience, this seems to allow the model to get a slightly better accuracy
 - `capital_gain` and `capital_loss`
   - Seem to be very spread out and a lot of the samples have this as 0
   - Have to standardise the values
@@ -70,9 +69,25 @@ Creating the keras model
 
 ## Training and evaluating the models
 
-Here I train the model, then use the given test set to test the accuracy of the model.  
+Below, I trained the `tf.keras` model using `model.fit` on the `train` and `validation` datasets.  
 
-![train and eval](content/MD_9.png)
+![Training the model](content/MD_9.png)  
+
+Looking at the plots of the accuracy and loss over time(epochs).  
+
+The loss of the model over time.  
+![Loss of the model](content/MD_10.png)  
+
+The accuracy of the model over time.  
+![Accuracy of the model over time](content/MD_11.png)  
+
+Interesting thing here is that there was a suddent dip in accuracy right at the time when the loss peaked for the validation dataset. I think this was probably due to the model overfitting at that point. The model then tried to not overfit on the train set, which stablised the loss and accuracy of the validation dataset in the next epoch.  
+
+Lastly I evaluate the model by first preping the `test` data in the same way I preped the `train` dataset.  
+
+![Evaluating the model](content/MD_12.png)  
+
+An 84.82% accuracy on the test set. As the accuracy is similar to the validation accuracy, we can assume that the model actually works! Hooray!
 
 ## Final thoughts  
 
