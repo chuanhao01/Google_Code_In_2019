@@ -93,7 +93,16 @@ An 84.82% accuracy on the test set. As the accuracy is similar to the validation
 
 Overall I think there is a lot I could improve on this project. One being engineering more features. Also I could have done more EDA to find out if some of the data were skewed and try to account for that.  
 
-Although I do not know where to begin with issues such as those. Overall, this was quite a fun project to see if I could use tensorflow to create a model to classify the income bracket of a person.
+Although I do not know where to begin with issues such as those. Overall, this was quite a fun project to see if I could use tensorflow to create a model to classify the income bracket of a person.  
+
+## Update to try and fix weird peaks  
+The colab notebook linked has the cells output for running the model for more epochs. Based on the graphs, it seems as though the model is overfitting on the train set. This could be seen from the gradual decrease in the validation accuracy and gradual increase in validation loss over time. However, the train accuracy continued to increase and loss decreased.
+
+This also does not seem to fix the problem with weird peaks as they seem to occur in a pattern.  
+
+Below is a screenshot.  
+
+![Trying to fix weird peaks](content/MD_13.png)
 
 ## Apendix
 
