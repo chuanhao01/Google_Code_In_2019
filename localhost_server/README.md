@@ -9,5 +9,9 @@ Express.js: [Link](http://expressjs.com/)
 
 The explaintion of the code are comments in the code.  
 
+### Setup
+Open a bash/terminal while in the directory and do `npm i`.
+To run the server, do `node app.js`
+
 ### Screenshot of the html page  
 ![Screenshot of the index.html page](content/sc_localhost_ScoreLab.png)
